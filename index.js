@@ -45,13 +45,58 @@ app.use((err, _req, res, _next) => {
   res.status(500).send("Error!");
 });
 
-// GET requests
+// default message
 app.get("/", (_req, res) => {
   res.send("Default Response");
 });
 
+//all movies
 app.get("/movies", (_req, res) => {
   res.json(topMovies);
+});
+
+// details based on title
+app.get("/movies/:title", (req, res) => {
+  res.json(
+    topMovies.find((movie) => {
+      return movie.title === req.params.title;
+    })
+  );
+});
+
+// genre by title
+app.get("/movies/genres/genre", (_req, res) => {
+  res.send("Successful GET request returning data on movie genre");
+});
+
+// director by name
+app.get("/movies/directors/director", (_req, res) => {
+  res.send("Successful GET request returning data on director");
+});
+
+// Registers a new user
+app.post("/users", (_req, res) => {
+  res.send("Successful POST request adding user");
+});
+
+// Update info
+app.put("/users/username", (_req, res) => {
+  res.send("Successful PUT request updating info on user");
+});
+
+// Add movie
+app.post("/users/username/movies/movietitle", (_req, res) => {
+  res.send("Successful put request adding a movie to user list");
+});
+
+// Delete movie
+app.delete("/users/username/movies/movietitle", (_req, res) => {
+  res.send("Successful Delete request deleting movie from user list");
+});
+
+// Deregister
+app.delete("/users/username", (_req, res) => {
+  res.send("Successful Delete request deleting user");
 });
 
 // listen for requests
