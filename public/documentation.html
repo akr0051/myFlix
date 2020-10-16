@@ -20,5 +20,98 @@
         movies.
       </p>
     </section>
+    <div>
+      <table>
+        <tr>
+          <th>Request</th>
+          <th>URL</th>
+          <th>HTTP Method</th>
+          <th>Request Body</th>
+          <th>Request Example</th>
+          <th>Response Body</th>
+        </tr>
+        <tr>
+          <td>List all movies</td>
+          <td>/movies</td>
+          <td>GET</td>
+          <td>None</td>
+          <td>/movies</td>
+          <td>JSON</td>
+        </tr>
+        <tr>
+          <td>Get information about movie by title</td>
+          <td>/movies/:title</td>
+          <td>GET</td>
+          <td>None</td>
+          <td>JSON</td>
+          <td>
+            {title: "The Godfather", genre: drama, director: "Francis Ford
+            Coppola"}
+          </td>
+        </tr>
+        <tr>
+          <td>Return data about genre by title</td>
+          <td>/movies/genres/:genre</td>
+          <td>GET</td>
+          <td>None</td>
+          <td>/movies/genres/drama</td>
+          <td>JSON</td>
+        </tr>
+        <tr>
+          <td>Return data about a director by name</td>
+          <td>/movies/directors/:director</td>
+          <td>GET</td>
+          <td>None</td>
+          <td>/movies/directors/Francis%Ford%Coppola</td>
+          <td>JSON</td>
+        </tr>
+        <tr>
+          <td>Allow new users to register</td>
+          <td>/users</td>
+          <td>POST</td>
+          <td>JSON</td>
+          <td>
+            {<br />"Username": "arivera",<br />
+            "Password": "123456"<br />}
+          </td>
+          <td>JSON</td>
+        </tr>
+        <tr>
+          <td>Allow users to update their user information</td>
+          <td>/users/:username</td>
+          <td>PUT</td>
+          <td>JSON</td>
+          <td>
+            {<br />"Username": "arivera",<br />
+            "Password": "ABCDE"<br />}
+          </td>
+          <td>JSON</td>
+        </tr>
+        <tr>
+          <td>Allow users to add a movie to their list of favorites</td>
+          <td>/users/:username/movies/:movietitle</td>
+          <td>POST</td>
+          <td>JSON</td>
+          <td>/users/akr0051/movies/The%Godfather</td>
+          <td>JSON</td>
+        </tr>
+        <tr>
+          <td>Allow users to remove a movie from their list of favorites</td>
+          <td>/users/:username/movies/:movietitle</td>
+          <td>DELETE</td>
+          <td>None</td>
+          <td>/users/akr0051/movies/The%Godfather</td>
+          <td>Text message update with removal</td>
+        </tr>
+        <tr>
+          <td>Allow existing users to deregister</td>
+          <td>/users/:username</td>
+          <td>DELETE</td>
+          <td>None</td>
+          <td>/users/akr0051</td>
+          <td>Text message update with deregistration</td>
+        </tr>
+      </table>
+    </div>
   </body>
 </html>
