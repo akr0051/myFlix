@@ -23,8 +23,8 @@
     <div>
       <table>
         <tr>
-          <th>Request</th>
-          <th>URL</th>
+          <th>Business Logic</th>
+          <th>Endpoint URL</th>
           <th>HTTP Method</th>
           <th>Request Body</th>
           <th>Request Example</th>
@@ -44,25 +44,22 @@
           <td>GET</td>
           <td>None</td>
           <td>JSON</td>
-          <td>
-            {title: "The Godfather", genre: drama, director: "Francis Ford
-            Coppola"}
-          </td>
+          <td>/movies/The%20Godfather</td>
         </tr>
         <tr>
           <td>Return data about genre by title</td>
-          <td>/movies/genres/:genre</td>
+          <td>genres/:Genre</td>
           <td>GET</td>
           <td>None</td>
-          <td>/movies/genres/drama</td>
+          <td>/genre/drama</td>
           <td>JSON</td>
         </tr>
         <tr>
           <td>Return data about a director by name</td>
-          <td>/movies/directors/:director</td>
+          <td>directors/:name</td>
           <td>GET</td>
           <td>None</td>
-          <td>/movies/directors/Francis%Ford%Coppola</td>
+          <td>/directors/Francis%20Ford%20Coppola</td>
           <td>JSON</td>
         </tr>
         <tr>
@@ -71,8 +68,11 @@
           <td>POST</td>
           <td>JSON</td>
           <td>
-            {<br />"Username": "arivera",<br />
-            "Password": "123456"<br />}
+            {
+            <br />Username: "akr0051",<br />
+            Password: "test123",<br />
+            Email: "akr0051@yahoo.com",<br />
+            Birthday: "06/29/1985", }
           </td>
           <td>JSON</td>
         </tr>
@@ -82,25 +82,27 @@
           <td>PUT</td>
           <td>JSON</td>
           <td>
-            {<br />"Username": "arivera",<br />
-            "Password": "ABCDE"<br />}
+            {
+            <br />Username: "arivera",<br />
+            Password: "ABCDE"<br />
+            }
           </td>
           <td>JSON</td>
         </tr>
         <tr>
           <td>Allow users to add a movie to their list of favorites</td>
-          <td>/users/:username/movies/:movietitle</td>
+          <td>/users/:username/movies/:movieId</td>
           <td>POST</td>
           <td>JSON</td>
-          <td>/users/akr0051/movies/The%Godfather</td>
+          <td>/users/akr0051/movies/12345</td>
           <td>JSON</td>
         </tr>
         <tr>
           <td>Allow users to remove a movie from their list of favorites</td>
-          <td>/users/:username/movies/:movietitle</td>
+          <td>/users/:username/movies/:movieId</td>
           <td>DELETE</td>
           <td>None</td>
-          <td>/users/akr0051/movies/The%Godfather</td>
+          <td>/users/akr0051/movies/12345</td>
           <td>Text message update with removal</td>
         </tr>
         <tr>
