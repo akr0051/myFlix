@@ -1,8 +1,7 @@
 const express = require("express"),
   morgan = require("morgan");
 (bodyParser = require("body-parser")), (uuid = require("uuid"));
-const cors = require("cors");
-app.use(cors());
+cors = require("cors");
 const { check, validationResult } = require("express-validator");
 
 const mongoose = require("mongoose");
