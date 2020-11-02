@@ -30,7 +30,9 @@ require("./passport");
 
 app.use(morgan("common"));
 
-app.use("/documentation", express.static("public"));
+app.get("/documentation", (req, res) => {
+  res.sendFile("public/documentation.html", { root: __dirname });
+});
 
 app.use((err, _req, res, _next) => {
   console.error(err.stack);
