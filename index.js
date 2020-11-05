@@ -47,7 +47,7 @@ app.get("/", (_req, res) => {
 //all movies
 app.get(
   "/movies",
-
+  passport.authenticate("jwt", { session: false }),
   (_req, res) => {
     Movies.find()
       .then((movies) => {
