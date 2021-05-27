@@ -41,7 +41,7 @@ app.use((err, _req, res, _next) => {
 
 // default message
 app.get("/", (_req, res) => {
-  res.send("Welcome to MyFlix!");
+  res.send("HELLO!");
 });
 
 //all movies
