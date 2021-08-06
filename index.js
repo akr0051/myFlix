@@ -23,7 +23,7 @@ mongoose.connect(process.env.CONNECTION_URI, {
 const app = express();
 
 app.use(bodyParser.json());
-const allowedOrigins = ['http://localhost:1234'];
+const allowedOrigins = ['http://localhost:1234', 'https://flixakr.netlify.app'];
 app.use(cors({
   origin: (origin, callback) => {
     if (!origin) return callback(null, true);
