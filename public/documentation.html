@@ -30,6 +30,10 @@
           <th>Request Example</th>
           <th>Response Body</th>
         </tr>
+        <!-- 
+          GET Request: 
+            - Returns JSON object of all movies in the db
+        -->
         <tr>
           <td>List all movies</td>
           <td>/movies</td>
@@ -38,6 +42,10 @@
           <td>/movies</td>
           <td>JSON</td>
         </tr>
+        <!-- 
+        GET Request: 
+          - Returns JSON object of all details helds on the requested movie
+        -->
         <tr>
           <td>Get information about movie by title</td>
           <td>/movies/:title</td>
@@ -46,6 +54,10 @@
           <td>JSON</td>
           <td>/movies/The%20Godfather</td>
         </tr>
+        <!-- 
+          GET Request: 
+            - Returns JSON object of all data held on the specified genre 
+        -->
         <tr>
           <td>Return data about genre by title</td>
           <td>genres/:Genre</td>
@@ -54,6 +66,10 @@
           <td>/genre/drama</td>
           <td>JSON</td>
         </tr>
+        <!-- 
+          GET Request:
+            - Returns JSON object of all data held on director of the specified movie
+        -->
         <tr>
           <td>Return data about a director by name</td>
           <td>directors/:name</td>
@@ -62,6 +78,12 @@
           <td>/directors/Francis%20Ford%20Coppola</td>
           <td>JSON</td>
         </tr>
+        <!-- 
+          POST Request:
+            - Expects JSON object of user that should be created
+            - Returns JSON object of user that was created
+        -->
+
         <tr>
           <td>Allow new users to register</td>
           <td>/users</td>
@@ -76,6 +98,10 @@
           </td>
           <td>JSON</td>
         </tr>
+        <!-- 
+          PUT Request
+            - Returns JSON object of the updated user
+        -->
         <tr>
           <td>Allow users to update their user information</td>
           <td>/users/:username</td>
@@ -97,6 +123,10 @@
           <td>/users/akr0051/movies/12345</td>
           <td>JSON</td>
         </tr>
+        <!-- 
+          DELETE Request
+            - Returns JSON object of the respective user
+        -->
         <tr>
           <td>Allow users to remove a movie from their list of favorites</td>
           <td>/users/:username/movies/:movieId</td>
@@ -105,6 +135,10 @@
           <td>/users/akr0051/movies/12345</td>
           <td>Text message update with removal</td>
         </tr>
+        <!-- 
+          DELETE Request
+            - Returns success message
+        -->
         <tr>
           <td>Allow existing users to deregister</td>
           <td>/users/:username</td>
